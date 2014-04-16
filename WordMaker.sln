@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordMaker", "WordMaker\WordMaker.csproj", "{7F637E2E-11A2-4AF2-93B4-812F6CC5387A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F637E2E-11A2-4AF2-93B4-812F6CC5387A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F637E2E-11A2-4AF2-93B4-812F6CC5387A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F637E2E-11A2-4AF2-93B4-812F6CC5387A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F637E2E-11A2-4AF2-93B4-812F6CC5387A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = WordMaker\WordMaker.csproj
+	EndGlobalSection
+EndGlobal
