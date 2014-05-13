@@ -1,11 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WordMaker\MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WordMaker\Matches.cs">
     <Files>
-      <File FileName="WordMaker\MainActivity.cs" Line="50" Column="7" />
-      <File FileName="WordMaker\Combination.cs" Line="1" Column="1" />
+      <File FileName="WordMaker\MainActivity.cs" Line="39" Column="6" />
       <File FileName="WordMaker\Resources\values\Strings.xml" Line="1" Column="1" />
-      <File FileName="WordMaker\Matches.cs" Line="1" Column="1" />
+      <File FileName="WordMaker\Matches.cs" Line="24" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

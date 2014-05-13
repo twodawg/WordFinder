@@ -16,7 +16,8 @@ namespace WordMaker
 	[Activity (Label = "Word Maker", MainLauncher = true)]
 	public class MainActivity : Activity
 	{
-		static List<string> Dic = new List<string>();
+		static List<string> dictionaryFile = new List<string>();
+		static Matches matches = new Matches();
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -33,7 +34,7 @@ namespace WordMaker
 				using (StreamReader sr = new StreamReader (fs)) {
 
 					while (!sr.EndOfStream) {
-						Dic.Add (sr.ReadLine ());
+						dictionaryFile.Add (sr.ReadLine ());
 					}
 				}
 			}
@@ -42,45 +43,21 @@ namespace WordMaker
 			Button button = FindViewById<Button> (Resource.Id.myButton);
 			TextView resultsEditText = FindViewById<TextView> (Resource.Id.resultsTextView);
 			EditText inputEditText = FindViewById<EditText> (Resource.Id.inputEditText);
-			//ProgressBar progressBar = FindViewById<ProgressBar> (Resource.Id.progressBar);
-			//progressBar.Visibility = ViewStates.Invisible;
-			
+
 			button.Click += delegate {
 
-				//RunOnUiThread( () => {progressBar.Visibility = ViewStates.Visible;});
-
 				resultsEditText.Text = "";
-				//var wordlist = new Combination(inputEditText.Text).Results();
-				Matches matches = new Matches();
 
 				Task.Run( () => {
-					foreach (var match in matches.GetMatches(inputEditText.Text, Dic.ToArray()).
-						ToList<string>().OrderByDescending(o => o.Length))
+					foreach (var match in matches.GetMatches(inputEditText.Text, 
+						dictionaryFile.ToArray()).
+						ToList<string>().
+						OrderByDescending(o => o.Length))
 					{
-						RunOnUiThread( () => {resultsEditText.Text +=match + System.Environment.NewLine;});  
-					}
-//				foreach (var mixed in wordlist)
-//				{
-//					List<string> matches = new List<string>(Dic.AsParallel().Where(i => i.Equals(mixed)));
-//					//matches.AddRange(Dic.Where(i => i.Equals(mixed)));
-//
-//					if (matches.Count > 0)
-//					{
-//						// Only show the dictionary matches to the mixes words
-//						foreach (var match in matches.OrderByDescending(o => o.Length))
-//						{
-//							RunOnUiThread( () => {resultsEditText.Text +=match + System.Environment.NewLine;});
-//						}
-//					}
-//				}				
+						RunOnUiThread( () => {resultsEditText.Text += match + System.Environment.NewLine;});  
+					}	
 				});
-				//progressBar.Visibility = ViewStates.Gone;
-//				ringProgressDialog.Dismiss();
 
-//				foreach (var item in new Combination(inputEditText.Text).Results())
-//				{
-//					resultsEditText.Text += item + System.Environment.NewLine;
-//				}
 			};
 		}
 

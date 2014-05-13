@@ -22,7 +22,6 @@ namespace Scrabble
             return matches;
         }
 
-
         bool WordCanBeBuiltFromSourceLetters(string targetWord, string sourceLetters)
         {
             string builtWord = "";
